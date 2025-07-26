@@ -23,7 +23,6 @@ test.beforeEach(async ({ page }) => {
      const postCode = faker.location.zipCode(); 
 
   await addCustomer.open();
-  await addCustomer.clickAddCustomerButton();
   await addCustomer.fillFirstName(firstName);
   await addCustomer.fillLastName(lastName);
   await addCustomer.fillPostCode(postCode);
