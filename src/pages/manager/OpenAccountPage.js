@@ -1,6 +1,6 @@
 import { expect } from '@playwright/test';
 
-export class LoginPage {
+export class OpenAccountPage {
   constructor(page) {
     this.page = page;
     this.bankManagerLogin = page.getByRole('button', { name: 'Bank Manager Login' });

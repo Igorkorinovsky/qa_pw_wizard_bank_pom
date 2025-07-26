@@ -2,8 +2,7 @@ import { test, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker';
 import { AddCustomerPage } from '../../../src/pages/manager/AddCustomerPage';
 import { CustomersListPage } from '../../../src/pages/manager/CustomersListPage';
-//import { BankManagerMainPage } from '../../../src/pages/manager/BankManagerMainPage';
-import { LoginPage } from '../../../src/pages/manager/OpenAccountPage';
+import { OpenAccountPage } from '../../../src/pages/manager/OpenAccountPage';
 
 let firstName;
 let lastName;
@@ -30,7 +29,6 @@ test.beforeEach(async ({ page }) => {
 
 
   await addCustomer.open();
-  //await addCustomer.clickAddCustomer();
   await addCustomer.fillFirstName(firstName);
   await addCustomer.fillLastName(lastName);
   await addCustomer.fillPostCode(postCode);
@@ -55,11 +53,9 @@ test('Assert manager can add new customer', async ({ page }) => {
   1. Do not rely on the customer row id for the step 13. 
     Use the ".last()" locator to get the last row.
   */
-  const openAccount = new LoginPage(page);
+  const openAccount = new OpenAccountPage(page);
  
   await openAccount.goToOpenAccountPage();
-  //await openAccount.waitForCustomerOption(fullName);
-
   await openAccount.selectCustomer(fullName);
   await openAccount.selectCurrency('Dollar');
   await openAccount.clickProcess();

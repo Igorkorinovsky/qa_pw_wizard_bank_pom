@@ -45,3 +45,4 @@ test('Assert manager can search customer by First Name', async ({ page }) => {
   await expect(rows).toHaveCount(1);
   await expect(rows.first()).toContainText(firstName);
 });
+

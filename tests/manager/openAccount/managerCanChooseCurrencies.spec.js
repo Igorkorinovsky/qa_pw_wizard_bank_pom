@@ -1,9 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker';
-import { AddCustomerPage } from '../../../src/pages/manager/AddCustomerPage';
-import { CustomersListPage } from '../../../src/pages/manager/CustomersListPage';
-import { BankManagerMainPage } from '../../../src/pages/manager/BankManagerMainPage';
-import { LoginPage } from '../../../src/pages/manager/OpenAccountPage';
+
+import { OpenAccountPage } from '../../../src/pages/manager/OpenAccountPage';
 
 
 test('Assert manager can choose currencies for account', async ({ page }) => {
@@ -18,7 +16,7 @@ test('Assert manager can choose currencies for account', async ({ page }) => {
   6. Select currency Rupee
   7. Assert the drop-dwon has value Rupee
   */
-   const openAccount = new LoginPage(page);
+   const openAccount = new OpenAccountPage(page);
   
 
    await openAccount.goToOpenAccountPage();
@@ -32,3 +30,4 @@ test('Assert manager can choose currencies for account', async ({ page }) => {
    await openAccount.assertDropDownValue('Rupee');
 
 });
+

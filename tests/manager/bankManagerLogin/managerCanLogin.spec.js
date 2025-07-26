@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../../../src/pages/manager/OpenAccountPage';
+import { OpenAccountPage } from '../../../src/pages/manager/OpenAccountPage';
 import { BankManagerMainPage } from '../../../src/pages/manager/BankManagerMainPage';
 
 test('Assert manager can Login', async ({ page }) => {
@@ -12,7 +12,7 @@ test('Assert manager can Login', async ({ page }) => {
   4. Assert button [Open Account] is visible
   5. Assert button [Customers] is visible
   */
-   const openAccount = new LoginPage(page);
+   const openAccount = new OpenAccountPage(page);
    const managerPage = new BankManagerMainPage(page); 
 
    await openAccount.open();

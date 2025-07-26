@@ -31,7 +31,7 @@ async assertLastCustomerMatches({ firstName, lastName, postCode }) {
   await expect(row).toContainText(lastName);
   await expect(row).toContainText(postCode);
   const cells = row.locator('td');
-  await expect(cells.nth(3)).toHaveText(''); 
+  await expect(cells.nth(3)).toHaveText(''); // порожній номер акаунта
   }
   async deleteCustomerByName(firstName, lastName) {
     const row = this.tableRows.filter({ hasText: `${firstName} ${lastName}` }).first();

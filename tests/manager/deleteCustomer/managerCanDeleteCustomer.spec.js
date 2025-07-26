@@ -23,7 +23,7 @@ test.beforeEach(async ({ page }) => {
      const postCode = faker.location.zipCode(); 
 
   await addCustomer.open();
-  await addCustomer.clickAddCustomer();
+  await addCustomer.clickAddCustomerButton();
   await addCustomer.fillFirstName(firstName);
   await addCustomer.fillLastName(lastName);
   await addCustomer.fillPostCode(postCode);
@@ -52,3 +52,4 @@ test('Assert manager can delete customer', async ({ page }) => {
    await page.reload();
    await customersListPage.assertCustomerNotPresent(firstName, lastName);
 });
+
